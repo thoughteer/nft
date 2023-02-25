@@ -1,7 +1,11 @@
-const { polygonUrl, scanApiKey, proxyKey } = require('./secret.json');
+import "./tasks/deploy";
+import "./tasks/mint";
+import "./tasks/upload";
 
-require("@nomicfoundation/hardhat-toolbox");
-require("@nomiclabs/hardhat-etherscan");
+import "@nomicfoundation/hardhat-toolbox";
+import "@nomiclabs/hardhat-etherscan";
+
+import { polygonUrl, scanApiKey, proxyKey } from "./secret.json";
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
