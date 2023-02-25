@@ -1,0 +1,10 @@
+/coverage/
+/coverage.json
+/node_modules/
+
+# Hardhat files
+/artifacts/
+/cache/
+
+# Secret file
+/secret.json
