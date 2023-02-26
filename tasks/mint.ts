@@ -1,6 +1,6 @@
 import { task, types } from "hardhat/config";
 
-const contractAddress = "0x7628c59579ca338ad4c08a1998d9a6b794ea9293";
+const contractAddress = "0x5308edb2f2e40a5aede53425252533a6190d2a4f";
 
 task("mint", "Mint a new avatar")
     .addParam("to", "recipient address")
@@ -15,7 +15,7 @@ task("mint", "Mint a new avatar")
             args.id,
             args.url,
             {
-                gasPrice: 50000000000,
+                gasPrice: 200000000000,
                 gasLimit: 1000000,
             },
         );

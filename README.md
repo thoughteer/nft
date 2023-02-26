@@ -1,6 +1,4 @@
-# thoughteer.nft
-
-My NFT avatar collection.
+# My NFT avatar collection
 
 ### Deployment
 

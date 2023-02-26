@@ -10,6 +10,10 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract Avatar is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Burnable, Ownable {
     constructor() ERC721("Avatar", "TNFT") {}
 
+    function contractURI() public pure returns (string memory) {
+        return "data:application/json;base64,eyJuYW1lIjoidGhvdWdodGVlciIsImRlc2NyaXB0aW9uIjoiTXkgTkZUIGF2YXRhciBjb2xsZWN0aW9uIiwiaW1hZ2UiOiJpcGZzOi8vUW1iQUFBeUJ6RXNpTlN4cHp2NEU2V0ZMUVB6SzlzNmRSc1JiNU5QNGF4UEIzcC8wIn0=";
+    }
+
     function safeMint(address to, uint256 tokenId, string memory uri)
         public
         onlyOwner
