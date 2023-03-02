@@ -6,6 +6,8 @@ task("mint", "Mint a new avatar")
     .addParam("to", "recipient address")
     .addParam("id", "token id", undefined, types.int)
     .addParam("url", "token metadata url")
+    .addParam("nonce", "nonce", undefined, types.int)
+    .addParam("gasPrice", "gas price in wei", undefined, types.int)
     .setAction(async (args, hre) => {
         const Avatar = await hre.ethers.getContractFactory("Avatar");
         const avatar = Avatar.attach(contractAddress);
@@ -15,10 +17,10 @@ task("mint", "Mint a new avatar")
             args.id,
             args.url,
             {
-                gasPrice: 200000000000,
-                gasLimit: 1000000,
+                nonce: args.nonce,
+                gasPrice: args.gasPrice,
             },
         );
-        
+
         console.log("Minted");
     });

@@ -1,10 +1,16 @@
-import { task } from "hardhat/config";
+import { task, types } from "hardhat/config";
 
 task("deploy", "Deploy the contract to Polygon")
-  .setAction(async (_, hre) => {
-    const Avatar = await hre.ethers.getContractFactory("Avatar");
-    const avatar = await Avatar.deploy();
-    await avatar.deployed();
+    .addParam("nonce", "nonce", undefined, types.int)
+    .addParam("gasPrice", "gas price in wei", undefined, types.int)
+    .setAction(async (args, hre) => {
+        const Avatar = await hre.ethers.getContractFactory("Avatar");
+        const avatar = await Avatar.deploy({
+            nonce: args.nonce,
+            gasPrice: args.gasPrice,
+        });
 
-    console.log("Avatar deployed to", avatar.address);
-  });
+        await avatar.deployed();
+
+        console.log("Avatar deployed to", avatar.address);
+    });
