@@ -1,6 +1,5 @@
 import "./tasks/deploy";
 import "./tasks/mint";
-import "./tasks/upload";
 
 import "@nomicfoundation/hardhat-toolbox";
 import "@nomiclabs/hardhat-etherscan";
